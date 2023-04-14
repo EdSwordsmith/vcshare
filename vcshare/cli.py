@@ -1,6 +1,8 @@
 import click
 import os
 
+from .server import run_server
+
 from . import create_app
 from .config import VCShareConfig
 
@@ -36,5 +38,4 @@ from .config import VCShareConfig
 def main(dir: str, upload: bool, download: bool, port: int):
     directory = os.path.abspath(dir)
     config = VCShareConfig(directory, upload, download)
-    app = create_app(config)
-    app.run(port=port)
+    run_server(create_app(config), port)

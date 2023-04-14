@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>VCShare</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <h1>{{ folder }}</h1>
+        {% for folder in folders %}
+            <a href="/dir/{{ folder }}">
+                <h2>{{ folder }}/</h2>
+            </a>
+        {% endfor %}
+        {% for file in files %}
+            <a href="/file/{{folder}}/{{ file }}">
+                <h2>{{ file }}</h2>
+            </a>
+        {% endfor %}
+    </body>
+</html>
